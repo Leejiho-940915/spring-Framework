@@ -4,6 +4,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="tv" class="polymorphism.SamsungTV"></bean>
-	<bean id="lgtv" class="polymorphism.LgTV"></bean>
+	<!-- <bean id="tv" class="polymorphism.SamsungTV"></bean> -->
+	<!-- <bean id="lgtv" class="polymorphism.LgTV"></bean> -->
+	
+	<!-- <bean class="polymorphism.SamsungTV"></bean> -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod"/> -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" destroy-method="destroyMethod"/> -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" lazy-init="true"/> -->
+	<bean id="tv" class="polymorphism.SamsungTV" scope="singleton"/><!-- 싱글톤 패턴은 메모리에 객체가 1개만 생기고 복사하는형태 -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="prototype"/>bean이 요청될때마다 매번 새로운 객체를 생성하여 반환 -->
+	
 </beans>
