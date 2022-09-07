@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					    http://www.springframework.org/schema/beans/spring-beans.xsd
+					    http://www.springframework.org/schema/context
+					    http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 
 	<!-- <bean id="tv" class="polymorphism.SamsungTV"></bean> -->
@@ -11,7 +17,9 @@
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod"/> -->
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" destroy-method="destroyMethod"/> -->
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" lazy-init="true"/> -->
-	<bean id="tv" class="polymorphism.SamsungTV" scope="singleton"/><!-- 싱글톤 패턴은 메모리에 객체가 1개만 생기고 복사하는형태 -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="singleton"/>싱글톤 패턴은 메모리에 객체가 1개만 생기고 복사하는형태 -->
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="prototype"/>bean이 요청될때마다 매번 새로운 객체를 생성하여 반환 -->
+	
+	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
 	
 </beans>

@@ -23,6 +23,7 @@ public class TVUser {
 		// 3. Spring 컨테이너를 종료한다.
 		factory.close();
 		
+		
 		/*
 		 * 1. TVUser 클라이언트가 스프링 설정 파일을 로딩하여 컨테이너 구동
 		 * 2. 스프링 설정 파일에 <bean> 등록된 SamsungTV 객체 생성
