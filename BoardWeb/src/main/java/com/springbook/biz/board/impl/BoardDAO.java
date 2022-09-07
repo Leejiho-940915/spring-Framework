@@ -6,10 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.common.JDBCUtil;
 
 // DAO(Data Access Object)
+@Repository("boardDAO")
 public class BoardDAO {
 	// JDBC 관련 변수
 	private Connection conn = null;
@@ -33,7 +36,6 @@ public class BoardDAO {
 			stmt.setString(1, vo.getTitle());
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3, vo.getContent());
-			stmt.setDate(4, vo.getRegDate());
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
