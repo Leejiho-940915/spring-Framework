@@ -16,10 +16,9 @@ public class UserServiceClient {
 		UserVO vo = new UserVO();
 		vo.setId("test");
 		vo.setPassword("test");
-		vo.setName("test");
-		vo.setRole("test");
 		
 		UserVO user = userService.getUser(vo);
+		
 		if (user != null) {
 			System.out.println(user.getName() + "님 환영합니다.");
 		} else {
