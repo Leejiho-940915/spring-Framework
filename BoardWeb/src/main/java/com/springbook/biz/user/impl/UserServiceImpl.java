@@ -1,5 +1,17 @@
 package com.springbook.biz.user.impl;
 
-public class UserServiceImpl {
+import com.springbook.biz.user.UserService;
+import com.springbook.biz.user.UserVO;
+
+public class UserServiceImpl implements UserService {
+	private UserDAO userDAO;
+	
+	public void setUserDAO(UserDAO user) {
+		this.userDAO = user;
+	}
+	
+	public UserVO getUser(UserVO vo) {
+		return userDAO.getUser(vo);
+	}
 
 }
