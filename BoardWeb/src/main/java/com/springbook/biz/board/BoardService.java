@@ -4,18 +4,18 @@ import java.util.List;
 
 public interface BoardService {
 
-	// µî·Ï
+	// ë“±ë¡
 	void insertBoard(BoardVO vo);
 	
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	void updateBoard(BoardVO vo);
 	
-	// »èÁ¦
+	// ì‚­ì œ
 	void deleteBoard(BoardVO vo);
 	
-	// »ó¼¼ Á¶È¸
+	// ìƒì„¸ ì¡°íšŒ
 	BoardVO getBoard(BoardVO vo);
 	
-	// ¸ñ·Ï Á¶È¸
+	// ëª©ë¡ ì¡°íšŒ
 	List<BoardVO> getBoardList(BoardVO vo);
 }
