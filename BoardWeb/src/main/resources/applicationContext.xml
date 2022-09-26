@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-					    http://www.springframework.org/schema/beans/spring-beans.xsd
-					    http://www.springframework.org/schema/context
-					    http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
 
 	<!-- <bean id="tv" class="polymorphism.SamsungTV"></bean> -->
@@ -21,6 +20,15 @@
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="prototype"/>bean이 요청될때마다 매번 새로운 객체를 생성하여 반환 -->
 	
 	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
+	<bean id="log" class="com.springbook.biz.common.Log4jAdvice"></bean>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+		
+		<aop:aspect ref="log">
+			<aop:before method="printLogging" pointcut-ref="allPointcut"/>
+		</aop:aspect>
+	</aop:config>
 	
 	<!-- <bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
 		<property name="userDAO" ref="userDAO"/>
