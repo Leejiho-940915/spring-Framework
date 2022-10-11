@@ -1,5 +1,6 @@
 package com.springbook.biz.board;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.support.AbstractApplicationContext;
@@ -9,6 +10,7 @@ public class BoardServiceClient {
 	public static void main(String[] args) {
 		// 1. Spring 컨테이너를 구동한다.
 		AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
+		
 		
 		// 2. Spring 컨테이너로부터 BoardServiceImpl 객체를 Lookup 한다.
 		BoardService boardService = (BoardService) container.getBean("boardService");
